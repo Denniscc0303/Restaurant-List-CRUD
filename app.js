@@ -5,7 +5,12 @@ const exphbs = require('express-handlebars')
 const restaurantList = require('./restaurant.json')
 const mongoose = require('mongoose') // 載入 mongoose
 const Restaurant = require('./models/restaurant') // 載入 Todo model
+// 引用 body-parser
+const bodyParser = require('body-parser')
 
+
+// 用 app.use 規定每一筆請求都需要透過 body-parser 進行前置處理
+app.use(bodyParser.urlencoded({ extended: true }))
 
 mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true }) // 設定連線到 mongoDB
 
@@ -43,6 +48,29 @@ app.get('/restaurants/:restaurant_id', (req, res) => {
   res.render('show', { restaurants: restaurant })
 })
 
+app.get('/restaurants/new/add', (req, res) => {
+  return res.render('new')
+})
+
+app.post('/restaurants', (req, res) => {
+  const name = req.body.name
+  const name_en = req.body.name_en
+  const category = req.body.category
+  const image = req.body.image
+  const location = req.body.location
+  const phone = req.body.phone
+  const google_map = req.body.google_map
+  const rating = req.body.rating
+  const description = req.body.description       // 從 req.body 拿出表單裡的 name 資料
+  return Restaurant.create({
+    name, name_en, category, image, location, phone, google_map, rating, description
+  })     // 存入資料庫
+    .then(() => res.redirect('/')) // 新增完成後導回首頁
+    .catch(error => console.log(error))
+
+})
+
 app.listen(port, () => {
   console.log(`Express is listening on localhost:${port}`)
 })
+
