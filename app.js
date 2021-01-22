@@ -43,10 +43,10 @@ app.get('/search', (req, res) => {
   res.render('index', { restaurants: restaurant, keyword: keyword })
 })
 
-app.get('/restaurants/:restaurant_id', (req, res) => {
-  const restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
-  res.render('show', { restaurants: restaurant })
-})
+// app.get('/restaurants/:restaurant_id', (req, res) => {
+//   const restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
+//   res.render('show', { restaurants: restaurant })
+// })
 
 app.get('/restaurants/new/add', (req, res) => {
   return res.render('new')
@@ -68,6 +68,14 @@ app.post('/restaurants', (req, res) => {
     .then(() => res.redirect('/')) // 新增完成後導回首頁
     .catch(error => console.log(error))
 
+})
+
+app.get('/restaurants/:id', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .lean()
+    .then((restaurant) => res.render('show', { restaurants: restaurant }))
+    .catch(error => console.log(error))
 })
 
 app.listen(port, () => {
