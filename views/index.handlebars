@@ -52,8 +52,12 @@
           <a href="./restaurants/{{ this._id }}">
             <button type="button" class="btn btn-secondary btn-sm m-1">Detail</button>
           </a>
-          <button type="button" class="btn btn-secondary btn-sm m-1" href="/restaurants/{{ this._id }}">Delete</button>
+          <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
+            <button type="submit" class="btn btn-secondary btn-sm m-1">Delete</button>
+          </form>
         </div>
+
+
 
 
         {{/each}}

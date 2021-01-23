@@ -81,13 +81,15 @@
       </div>
     </div>
 
-    <div class="row g-3 align-items-center m-3">
+    <div class="row g-3 align-items-start m-3">
       <div class="col-auto">
         <label class="col-form-label" style="width: 5vw;">Description:</label>
       </div>
       <div class="col-auto">
-        <input type="text" class="form-control" placeholder="description" name="description"
-          value="{{ restaurants.description }}" style="width: 30vw;">
+        <textarea type="text" class="form-control" placeholder="description" name="description" value=""
+          style="width: 30vw; height: 30vh; overflow: auto">
+          {{ restaurants.description }}
+        </textarea>
       </div>
     </div>
     <div class="d-flex justify-content-center mr-3">
