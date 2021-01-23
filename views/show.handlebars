@@ -1,5 +1,12 @@
 <h1 class="mb-1 restaurant-show-title">{{restaurants.name}}</h1>
+
 <div class="container">
+  <div class="edit-and-back-button">
+    <a href="/restaurants/{{ restaurants._id }}/edit">
+      <button type="button" class="btn btn-secondary btn-sm m-1">Edit</button>
+    </a>
+    <a href="/"><button type="button" class="btn btn-secondary btn-sm m-1">Back</button></a>
+  </div>
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
 

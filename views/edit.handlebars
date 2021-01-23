@@ -1,0 +1,99 @@
+<h1 class="mb-1 restaurant-new-title">編輯餐廳至清單</h1>
+<form action="/restaurants/{{ restaurants._id }}/edit" method="POST">
+  <div class="container ml-5 mb-5">
+    <div class="row g-3 align-items-center m-3">
+      <div class="col-auto">
+        <label class="col-form-label" style="width: 5vw;">Name:</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" class="form-control" placeholder="name" name="name" value="{{ restaurants.name }}"
+          style="width: 30vw;">
+      </div>
+    </div>
+
+    <div class="row g-3 align-items-center m-3">
+      <div class="col-auto">
+        <label class="form-label" style="width: 5vw;">Name_en:</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" class="form-control" placeholder="name_en" name="name_en" value="{{ restaurants.name_en }}"
+          style="width: 30vw;">
+      </div>
+    </div>
+
+    <div class="row g-3 align-items-center m-3">
+      <div class="col-auto">
+        <label class="form-label" style="width: 5vw;">Category:</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" class="form-control" placeholder="category" name="category"
+          value="{{ restaurants.category }}" style="width: 30vw;">
+      </div>
+    </div>
+
+    <div class="row g-3 align-items-center m-3">
+      <div class="col-auto">
+        <label class="col-form-label" style="width: 5vw;">Image:</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" class="form-control" placeholder="image" name="image" value="{{ restaurants.image }}"
+          style="width: 30vw;">
+      </div>
+    </div>
+
+    <div class="row g-3 align-items-center m-3">
+      <div class="col-auto">
+        <label class="col-form-label" style="width: 5vw;">Location:</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" class="form-control" placeholder="location" name="location"
+          value="{{ restaurants.location }}" style="width: 30vw;">
+      </div>
+    </div>
+
+    <div class="row g-3 align-items-center m-3">
+      <div class="col-auto">
+        <label class="col-form-label" style="width: 5vw;">Phone:</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" class="form-control" placeholder="phone" name="phone" value="{{ restaurants.phone }}"
+          style="width: 30vw;">
+      </div>
+    </div>
+
+    <div class="row g-3 align-items-center m-3">
+      <div class="col-auto">
+        <label class="col-form-label" style="width: 5vw;">Google_map:</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" class="form-control" placeholder="google_map" name="google_map"
+          value="{{ restaurants.google_map }}" style="width: 30vw;">
+      </div>
+    </div>
+
+    <div class="row g-3 align-items-center m-3">
+      <div class="col-auto">
+        <label class="col-form-label" style="width: 5vw;">Rating:</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" class="form-control" placeholder="rating" name="rating" value="{{ restaurants.rating }}"
+          style="width: 30vw;">
+      </div>
+    </div>
+
+    <div class="row g-3 align-items-center m-3">
+      <div class="col-auto">
+        <label class="col-form-label" style="width: 5vw;">Description:</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" class="form-control" placeholder="description" name="description"
+          value="{{ restaurants.description }}" style="width: 30vw;">
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mr-3">
+      <button type="submit" class="btn btn-secondary btn-sm m-1">Save</button>
+      <a href="/"><button type="button" class="btn btn-secondary btn-sm m-1">Back</button></a>
+    </div>
+
+  </div>
+</form>
