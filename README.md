@@ -34,13 +34,13 @@
 1. 打開你的 terminal，Clone 此專案至本機電腦
 
 ```
-git clone https://github.com/Denniscc0303/Restaurant_List_CRUD.git
+git clone https://github.com/Denniscc0303/Restaurant-List-CRUD.git
 ```
 
 2. 開啟終端機(Terminal)，進入存放此專案的資料夾
 
 ```
-cd restaurant_list_CRUD
+cd Restaurant-List-CRUD
 ```
 
 3. 安裝 npm 套件
@@ -49,18 +49,10 @@ cd restaurant_list_CRUD
 在 Terminal 輸入 npm install 指令
 ```
 
-4. 安裝 nodemon 套件
+4. 匯入種子檔案
 
 ```
-在 Terminal 輸入 nodemon app.js 指令
-```
-
-5. 匯入種子檔案
-
-```
-在 Terminal 找到 restaurantSeeder.js 檔案
-
-執行 node models/seeds/restaurantSeeder.js 匯入使用者與餐廳資料
+執行 npm run seed 匯入使用者與餐廳資料
 ```
 
 當 terminal 出現以下字樣，即表示種子資料已新增至資料庫，按下 ctrl + c 結束執行
@@ -71,13 +63,13 @@ Mongodb connected!
 done
 ```
 
-6. 啟動伺服器，執行 app.js 檔案
+5. 啟動伺服器，執行 app.js 檔案
 
 ```
-nodemon app.js
+node app.js
 ```
 
-7. 當 terminal 出現以下字樣，表示伺服器與資料庫已啟動並成功連結
+6. 當 terminal 出現以下字樣，表示伺服器與資料庫已啟動並成功連結
 
 ```
 Express is listening on localhost:3000

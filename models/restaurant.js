@@ -9,8 +9,14 @@ const restaurantSchema = new Schema({
   name_en: String,
   category: String,
   image: String,
-  location: String,
-  phone: String,
+  location: {
+    type: String,
+    required: true
+  },
+  phone: {
+    type: String,
+    required: true
+  },
   google_map: String,
   rating: Number,
   description: String

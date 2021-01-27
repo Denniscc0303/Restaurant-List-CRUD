@@ -6,7 +6,7 @@
         <label class="col-form-label" style="width: 5vw;">Name:</label>
       </div>
       <div class="col-auto">
-        <input type="text" class="form-control" name="name" style="width: 30vw;">
+        <input type="text" class="form-control" name="name" style="width: 30vw;" required>
       </div>
     </div>
 
@@ -33,7 +33,7 @@
         <label class="col-form-label" style="width: 5vw;">Image:</label>
       </div>
       <div class="col-auto">
-        <input type="text" class="form-control" name="image" style="width: 30vw;">
+        <input type="url" class="form-control" name="image" style="width: 30vw;">
       </div>
     </div>
 
@@ -42,7 +42,7 @@
         <label class="col-form-label" style="width: 5vw;">Location:</label>
       </div>
       <div class="col-auto">
-        <input type="text" class="form-control" name="location" style="width: 30vw;">
+        <input type="text" class="form-control" name="location" style="width: 30vw;" required>
       </div>
     </div>
 
@@ -51,7 +51,7 @@
         <label class="col-form-label" style="width: 5vw;">Phone:</label>
       </div>
       <div class="col-auto">
-        <input type="text" class="form-control" name="phone" style="width: 30vw;">
+        <input type="text" class="form-control" name="phone" style="width: 30vw;" required>
       </div>
     </div>
 
@@ -60,7 +60,7 @@
         <label class="col-form-label" style="width: 5vw;">Google_map:</label>
       </div>
       <div class="col-auto">
-        <input type="text" class="form-control" name="google_map" style="width: 30vw;">
+        <input type="url" class="form-control" name="google_map" style="width: 30vw;">
       </div>
     </div>
 
@@ -69,7 +69,7 @@
         <label class="col-form-label" style="width: 5vw;">Rating:</label>
       </div>
       <div class="col-auto">
-        <input type="text" class="form-control" name="rating" style="width: 30vw;">
+        <input type="number" class="form-control" name="rating" style="width: 30vw;" step="0.1" min="0" max="5">
       </div>
     </div>
 
@@ -87,3 +87,25 @@
     </div>
   </div>
 </form>
+
+{{!--
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function () {
+    'use strict';
+    window.addEventListener('load', function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script> --}}
