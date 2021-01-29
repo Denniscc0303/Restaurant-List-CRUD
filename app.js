@@ -105,6 +105,39 @@ app.post('/restaurants/:id/delete', (req, res) => {
     .catch(error => console.log(error))
 })
 
+//設定sort路由
+app.get('/AtoZ', (req, res) => {
+  Restaurant.find() // 取出 Restaurant model 裡的所有資料
+    .lean() // 把 Mongoose 的 Model 物件轉換成乾淨的 JavaScript 資料陣列
+    .sort({ name: 'asc' }) // 新增這裡：根據 _id 升冪排序
+    .then(restaurants => res.render('index', { restaurants })) // 將資料傳給 index 樣板
+    .catch(error => console.error(error)) // 錯誤處理
+})
+
+app.get('/ZtoA', (req, res) => {
+  Restaurant.find() // 取出 Restaurant model 裡的所有資料
+    .lean() // 把 Mongoose 的 Model 物件轉換成乾淨的 JavaScript 資料陣列
+    .sort({ name: 'desc' }) // 新增這裡：根據 _id 升冪排序
+    .then(restaurants => res.render('index', { restaurants })) // 將資料傳給 index 樣板
+    .catch(error => console.error(error)) // 錯誤處理
+})
+
+app.get('/category', (req, res) => {
+  Restaurant.find() // 取出 Restaurant model 裡的所有資料
+    .lean() // 把 Mongoose 的 Model 物件轉換成乾淨的 JavaScript 資料陣列
+    .sort({ category: 'asc' }) // 新增這裡：根據 _id 升冪排序
+    .then(restaurants => res.render('index', { restaurants })) // 將資料傳給 index 樣板
+    .catch(error => console.error(error)) // 錯誤處理
+})
+
+app.get('/location', (req, res) => {
+  Restaurant.find() // 取出 Restaurant model 裡的所有資料
+    .lean() // 把 Mongoose 的 Model 物件轉換成乾淨的 JavaScript 資料陣列
+    .sort({ location: 'asc' }) // 新增這裡：根據 _id 升冪排序
+    .then(restaurants => res.render('index', { restaurants })) // 將資料傳給 index 樣板
+    .catch(error => console.error(error)) // 錯誤處理
+})
+
 //監聽app
 app.listen(port, () => {
   console.log(`Express is listening on localhost:${port}`)
